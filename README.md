@@ -42,7 +42,7 @@ Parte 2 – Análisis: Conexión de Synapse con Power BI y diseño de un panel i
 
 ## Pipeline
 
-![Arquitectura](Arquitectura_Agent_RAG.gif)
+![Arquitectura](Arquitectura.gif)
 
 
 ---
