@@ -13,7 +13,7 @@
 
 ## 📑 Table de contenido
 - [📌 Descripción general del proyecto](#-project-overview)
-- [🎯 Objectives](#-objectives)
+- [🎯 Objetivos](#-objetivos)
 - [📂 Project Structure](#-project-structure)
 - [🛠️ Tools & Technologies](#️-tools--technologies)
 - [📐 Data Architecture](#-data-architecture)
