@@ -14,7 +14,7 @@
 ## 📑 Table de contenido
 - [📌 Descripción general del proyecto](#-project-overview)
 - [🎯 Objetivos](#-objetivos)
-- [📂 Project Structure](#-project-structure)
+- [📂 Estructura del Proyecto](#-estructura-del-proyecto)
 - [🛠️ Tools & Technologies](#️-tools--technologies)
 - [📐 Data Architecture](#-data-architecture)
 - [⭐ Star Schema Design](#-star-schema-design)
