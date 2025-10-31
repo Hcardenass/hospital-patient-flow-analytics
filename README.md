@@ -1,4 +1,4 @@
-# Real-Time Patient Flow Analytics on Azure
+# Real-Time Analisis del flujo de pacientes en Azure
 
 ![Azure](https://img.shields.io/badge/Azure-Cloud-blue?logo=microsoft-azure&style=flat-square)
 ![PySpark](https://img.shields.io/badge/PySpark-Big%20Data-orange?logo=apache-spark&style=flat-square)
@@ -11,7 +11,7 @@
 
 ---
 
-## 📑 Table of Contents
+## 📑 Table de contenido
 - [📌 Project Overview](#-project-overview)
 - [🎯 Objectives](#-objectives)
 - [📂 Project Structure](#-project-structure)
@@ -31,12 +31,13 @@
 
 ---
 
-## 📌 Project Overview
-This project demonstrates a **real-time data engineering pipeline** for healthcare, designed to analyze **patient flow across hospital departments** using Azure cloud services.  
-The pipeline ingests streaming data, processes it in **Databricks (PySpark)**, and stores it in **Azure Synapse SQL Pool** for analytics and visualization.
+## 📌 Descripción general del proyecto
+Este proyecto demuestra un flujo de datos en tiempo real para el sector salud, diseñado para analizar el flujo de pacientes entre los departamentos de un hospital mediante los servicios en la nube de Azure.
 
-**Part 1 – Data Engineering:** Build the real-time ingestion + transformation pipeline.  
-**Part 2 – Analytics:** Connect Synapse to Power BI and design an interactive dashboard for hospital KPIs.
+El flujo ingiere datos en streaming, los procesa en **Databricks (PySpark)** y los almacena en **Azure Synapse SQL Pool** para su análisis y visualización.
+
+Parte 1 – Ingeniería de datos: Creación del flujo de datos de ingesta y transformación en tiempo real. 
+Parte 2 – Análisis: Conexión de Synapse con Power BI y diseño de un panel interactivo para los indicadores clave de rendimiento (KPI) del hospital.
 
 
 ## Pipeline
@@ -46,15 +47,15 @@ The pipeline ingests streaming data, processes it in **Databricks (PySpark)**, a
 
 ---
 
-## 🎯 Objectives
-- Collect real-time patient data via **Azure Event Hub**.
-- Process and cleanse data using **Databricks** (Bronze → Silver → Gold layers).
-- Implement a **star schema** in **Synapse SQL Pool** for efficient querying.
-- Enable **Version Control** with Git.
+## 🎯 Objetivos
+- Recopilar datos de pacientes en tiempo real mediante **Azure Event Hub**.
+- Procesar y depurar datos con **Databricks** (Bronce → Plata → Oro).
+- Implementar un **esquema de estrella** en **Synapse SQL Pool** para realizar consultas de forma eficiente.
+- Habilitar el **control de versiones** con Git.
 
 ---
 
-## 📂 Project Structure
+## 📂 Estructura del Proyecto
 ```plaintext
 real-time-patient-flow-azure/
 │
@@ -72,105 +73,105 @@ real-time-patient-flow-azure/
 
 ---
 
-## 🛠️ Tools & Technologies
-- **Azure Event Hub** – Real-time data ingestion
-- **Azure Databricks** – PySpark-based ETL processing
-- **Azure Data Lake Storage** – Staging raw and curated data
-- **Azure Synapse SQL Pool** – Data warehouse for analytics
-- **Power BI** – Dashboarding (future step)
-- **Python 3.9+** – Core programming
-- **Git** – Version control
+## 🛠️ Herramientas y tecnologías
+- **Azure Event Hub** – Ingesta de datos en tiempo real
+- **Azure Databricks** – Procesamiento ETL basado en PySpark
+- **Azure Data Lake Storage** – Almacenamiento provisional de datos sin procesar y procesados
+- **Azure Synapse SQL Pool** – Almacén de datos para análisis
+- **Power BI** – Creación de paneles
+- **Python 3.11+** – Lenguaje de Progamación
+- **Git** – Control de versiones
 
 ---
 
-## 📐 Data Architecture
-The pipeline follows a **multi-layered architecture**:
-- **Bronze Layer**: Raw JSON data from Event Hub stored in ADLS.
-- **Silver Layer**: Cleaned and structured data (validated types, null handling).
-- **Gold Layer**: Aggregated and transformed data ready for BI consumption.
+## 📐 Arquitectura de datos
+El proceso sigue una **arquitectura multicapa**:
+- **Bronze Layer**: Datos JSON sin procesar del Event Hub almacenados en ADLS.
+- **Silver Layer**: Datos limpios y estructurados (tipos validados, manejo de valores nulos).
+- **Gold Layer**: Datos agregados y transformados listos para su uso en inteligencia empresarial.
 
 ---
 
-## ⭐ Star Schema Design
-The **Gold layer** data in Synapse follows a **star schema** for optimized analytics:
-- **Fact Table**: `FactPatientFlow` (patient visits, timestamps, wait times, discharge)
+## ⭐ Diseño de esquema de estrella
+Los datos de **Gold Layer** en Synapse siguen un **esquema de estrella** para un análisis optimizado:
+- **Fact Table**: `FactPatientFlow` (visitas de pacientes, registros de tiempo, tiempos de espera, altas)
 - **Dimension Tables**:
-  - `DimDepartment` – Department details
-  - `DimPatient` – Patient demographic info
-  - `DimTime` – Date and time dimension
+  - `DimDepartment` – Detalles del departamento
+  - `DimPatient` – Información demográfica del paciente
+  - `DimTime` – Dimensión de fecha y hora
 
 ---
 
 ## ⚙️ Step-by-Step Implementation
 
 ### **1. Event Hub Setup**
-- Created **Event Hub namespace** and **patient-flow hub**.
-- Configured **consumer groups** for Databricks streaming.
+- Se crearon el **espacio de nombres Event Hub** y el **centro de flujo de pacientes**.
+- Se configuraron los **grupos de consumidores** para la transmisión de Databricks.
 
 ---
 
 ### **2. Data Simulation**
-- Developed **Python script** `patient_flow_generator.py` to stream fake patient data (departments, wait time, discharge status) to Event Hub.
+- Desarrollé el **script de Python** `patient_flow_generator.py` para transmitir datos ficticios de pacientes (departamentos, tiempo de espera, estado de alta) a Event Hub.
 - [Producer Code](simulator/patient_flow_generator.py)
 
 ---
 
 ### **3. Storage Setup**
-- Configured **Azure Data Lake Storage (ADLS Gen2)**.
-- Created containers for **bronze**, **silver**, and **gold** layers.
+- Almacenamiento tipo **Azure Data Lake Storage (ADLS Gen2)**.
+- Creé contenedores para capas de **bronze**, **silver**, and **gold**.
 
 ---
 
 ### **4. Databricks Processing**
-- [**Notebook 1**](databricks-notebooks/01_bronze_rawdata.py): Reads Event Hub stream into Bronze.
-- [**Notebook 2**](databricks-notebooks/02_silver_cleandata.py): Cleans and validates schema.
-- [**Notebook 3** ](databricks-notebooks/03_gold_transform.py): Aggregates and prepares star schema tables.
+- [**Notebook 1**](databricks-notebooks/01_bronze_rawdata.py): Lee la transmisión del Event Hub en Bronze.
+- [**Notebook 2**](databricks-notebooks/02_silver_cleandata.py): Limpia y valida el esquema..
+- [**Notebook 3** ](databricks-notebooks/03_gold_transform.py): Agrega y prepara tablas de esquema de estrella..
 
 ---
 
 ### **5. Synapse SQL Pool**
-- Created **dedicated SQL Pool**.
-- Executed schema and fact/dimension creation queries from:
+- Se ha creado un **grupo SQL dedicado**.
+- Se ejecutaron consultas de creación de esquemas y hechos/dimensiones desde:
   - [DDL_Qureis](sqlpool-quries/SQL_pool_quries.sql)
 
 ---
 
 ### **6. Version Control**
-- Version control with **Git**:
+- Control de versiones con **Git**:
   - [Commands reference](git_commands/git_bash)
 
 ---
 
 ## 📊 Data Analytics
 
-Once the **data pipeline** was established and a **Star Schema** implemented in Synapse SQL Pool, the next step was to build an **interactive dashboard in Power BI**.  
+Una vez establecido el **canal de datos** e implementado un **esquema de estrella** en Synapse SQL Pool, el siguiente paso fue crear un **panel interactivo en Power BI**.
 
 ### **🔗 Synapse → Power BI Connection**
-- Connected **Azure Synapse SQL Pool** to Power BI using a direct SQL connection.  
-- Imported **FactPatientFlow** and **Dimension tables**.  
-- Established relationships for **Star Schema-based reporting**.  
+- Se conectó el **Grupo de SQL de Azure Synapse** a Power BI mediante una conexión SQL directa.
+- Se importaron las tablas **FactPatientFlow** y **Dimensiones**. 
+- Se establecieron las relaciones para la generación de informes basados ​​en el **Esquema de estrella**.  
 
-### **📈 Dashboard Features**
-The **Healthcare Patient Flow Dashboard** provides insights into:  
-- **Bed Occupancy Rate** by department and gender.  
-- **Patient Flow Trends** (admissions, wait times).  
-- **Department-Level KPIs** (length of stay, Total Patients).  
-- **Interactive Filters & Slicers** for gender.
+### **📈 Funciones del panel de control**
+El **Panel de Flujo de Pacientes en el Sector Salud** proporciona información sobre:  
+- **Tasa de Ocupación de Camas** por departamento y sexo. 
+- **Tendencias del Flujo de Pacientes** (ingresos, tiempos de espera).
+- **Indicadores Clave de Desempeño (KPI) a Nivel de Departamento** (duración de la estancia, total de pacientes).
+- **Filtros y Segmentadores Interactivos** por sexo.
 
 <img width="1282" height="724" alt="Screenshot 2025-08-30 155951" src="https://github.com/user-attachments/assets/cf1f84dc-c1a5-4f07-84aa-1658abb4db16" />
 
 ---
 
-## ✅ Key Outcomes
-- **End-to-End Pipeline:** From **real-time ingestion → transformation → warehouse → analytics**.  
-- **Scalable Architecture:** Easily adaptable for different hospital datasets.  
-- **Business Insights:** Hospital admins can monitor **bed usage, patient flow, and department efficiency** in real time.  
-- **Portfolio Value:** Demonstrates both **Data Engineering** and **Analytics skills** in one project.  
+## ✅ Resultados clave
+- **Proceso integral:** Desde la **ingesta en tiempo real → transformación → almacenamiento → análisis**.
+- **Arquitectura escalable:** Fácilmente adaptable a diferentes conjuntos de datos hospitalarios. 
+- **Información empresarial:** Los administradores hospitalarios pueden monitorear **la ocupación de camas, el flujo de pacientes y la eficiencia de los departamentos** en tiempo real.
+- **Valor para el portafolio:** Demuestra habilidades tanto de **ingeniería de datos** como de **análisis** en un solo proyecto.
 
 ---
 
-**Author**: *Hector Adrian Cardenas Camacho* 
+**Autor**: *Hector Adrian Cardenas Camacho* 
 
 **LinkedIn**: [Hector Adrian Cardenas](www.linkedin.com/in/hector-cardenas-camacho-197101169) 
 
-**Contact**: [adriancardenasc19@gmail.com](mailto:adriancardenasc19@gmail.com)
+**Contacto**: [adriancardenasc19@gmail.com](mailto:adriancardenasc19@gmail.com)
