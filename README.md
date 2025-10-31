@@ -12,7 +12,7 @@
 ---
 
 ## 📑 Table de contenido
-- [📌 Project Overview](#-project-overview)
+- [📌 Descripción general del proyecto](#-project-overview)
 - [🎯 Objectives](#-objectives)
 - [📂 Project Structure](#-project-structure)
 - [🛠️ Tools & Technologies](#️-tools--technologies)
