@@ -170,9 +170,3 @@ El **Panel de Flujo de Pacientes en el Sector Salud** proporciona información s
 - **Valor para el portafolio:** Demuestra habilidades tanto de **ingeniería de datos** como de **análisis** en un solo proyecto.
 
 ---
-
-**Autor**: *Hector Adrian Cardenas Camacho* 
-
-**LinkedIn**: [Hector Adrian Cardenas](www.linkedin.com/in/hector-cardenas-camacho-197101169) 
-
-**Contacto**: [adriancardenasc19@gmail.com](mailto:adriancardenasc19@gmail.com)
