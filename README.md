@@ -12,7 +12,7 @@
 ---
 
 ## 📑 Table de contenido
-- [📌 Descripción general del proyecto](#-project-overview)
+- [📌 Descripción general del proyecto](#-Descripción-general-del-proyecto)
 - [🎯 Objetivos](#-objetivos)
 - [📂 Estructura del Proyecto](#-estructura-del-proyecto)
 - [🛠️ Tools & Technologies](#️-tools--technologies)
@@ -37,6 +37,7 @@ Este proyecto demuestra un flujo de datos en tiempo real para el sector salud, d
 El flujo ingiere datos en streaming, los procesa en **Databricks (PySpark)** y los almacena en **Azure Synapse SQL Pool** para su análisis y visualización.
 
 Parte 1 – Ingeniería de datos: Creación del flujo de datos de ingesta y transformación en tiempo real. 
+
 Parte 2 – Análisis: Conexión de Synapse con Power BI y diseño de un panel interactivo para los indicadores clave de rendimiento (KPI) del hospital.
 
 
