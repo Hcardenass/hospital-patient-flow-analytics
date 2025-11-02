@@ -158,7 +158,7 @@ El **Panel de Flujo de Pacientes en el Sector Salud** proporciona información s
 - **Indicadores Clave de Desempeño (KPI) a Nivel de Departamento** (duración de la estancia, total de pacientes).
 - **Filtros y Segmentadores Interactivos** por sexo.
 
-<img width="1282" height="724" alt="Screenshot 2025-08-30 155951" src="https://github.com/user-attachments/assets/cf1f84dc-c1a5-4f07-84aa-1658abb4db16" />
+![BI](BI.PNG)
 
 ---
 
